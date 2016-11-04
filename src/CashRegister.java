@@ -1,3 +1,5 @@
+import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -29,6 +31,12 @@ public class CashRegister {
         System.out.println("Welcome to Cash Register Pro!");
         Bill bill;
         while (1 < 2) {
+            System.out.println("Press ENTER to continue or ESC to quit the program...");
+            try {
+                int read = System.in.read(new byte[2]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             customer++;
             System.out.println("Bill for customer: " + customer);
             System.out.println("**********************");
