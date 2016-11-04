@@ -36,7 +36,6 @@ public class CashRegister {
             while (!(inChar == 113 || inChar == 10)) {
                 try {
                     inChar = System.in.read();
-                    System.out.println(inChar);
                     if (inChar == 113) {
                         break program;
                     } else if (inChar == 10){
