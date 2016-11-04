@@ -1,4 +1,3 @@
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,12 +29,26 @@ public class CashRegister {
 
         System.out.println("Welcome to Cash Register Pro!");
         Bill bill;
+        program:
         while (1 < 2) {
-            System.out.println("Press ENTER to continue or ESC to quit the program...");
-            try {
-                int read = System.in.read(new byte[2]);
-            } catch (IOException e) {
-                e.printStackTrace();
+            System.out.println("Press ENTER for next customer or 'q' to exit program");
+            int inChar = 0;
+            while (!(inChar == 113 || inChar == 10)) {
+                try {
+                    inChar = System.in.read();
+                    System.out.println(inChar);
+                    if (inChar == 113) {
+                        break program;
+                    } else if (inChar == 10){
+
+                    }
+                    else {
+                        System.out.println("Wrong input! Press ENTER for next customer or 'q' to exit program");
+                        input.nextLine();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             customer++;
             System.out.println("Bill for customer: " + customer);
