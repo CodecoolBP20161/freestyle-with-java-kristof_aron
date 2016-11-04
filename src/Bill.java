@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
+import java.util.Random;
 
 
 /**
@@ -30,6 +31,8 @@ public class Bill {
         }
         System.out.println("----------------------------------");
         System.out.printf("%-23s %10.2f %n %n", "Total:", total);
-        System.out.println("Date: " + new Date().toString() + "\n\n");
+        System.out.println("Date: " + new Date().toString());
+        Random rand = new Random();
+        System.out.println("NAV ID: " + rand.nextInt(999999) + "\n\n");
     }
 }
